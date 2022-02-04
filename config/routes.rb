@@ -12,7 +12,5 @@ Rails.application.routes.draw do
   get '/users/:id/movies', to: 'movies#results'
 
   post '/users/:user_id/movies/:movie_id/viewing-party/create', to: 'user_party#create'
-
-  # resources :user_party#, :only => [:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

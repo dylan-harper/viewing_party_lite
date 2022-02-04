@@ -16,8 +16,6 @@ class UserPartyController < ApplicationController
                        party_id: party.id,
                        status: "Host",)
 
-    # @user = User.find(params[:user_id])
-
     redirect_to "/users/#{params[:user_id]}"
   end
 end
