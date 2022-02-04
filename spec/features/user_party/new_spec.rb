@@ -13,21 +13,27 @@ RSpec.describe 'Viewing Party Create Page' do
   end
 
   it 'displays duration', :vcr do
-    # visit "/users/#{@user.id}/movies/#{@movie.db_id}/viewing-party/new"
     page.first(:css, "#duration")[:value].should eq("#{@movie.runtime}")
-    # expect(page).to have_content("Duration: #{@movie.runtime}")
   end
 
 
-  xit '' do
-
+  it 'can select a date', :vcr do
+    date = Time.now
+    date = date.strftime('%Y-%m-%d')
+    page.first(:css, "#select_date")[:value].should eq(date)
   end
 
-  xit '' do
-
+  it 'displays a start time field', :vcr do
+    # page.first(:css, "#start_time")[:value].should eq(Time.now)
+    expect(page).to have_content("Start time:")
   end
 
-  xit '' do
+  it 'displays all users with checkboxes', :vcr do
+    users = User.all
 
+    users.each do |user|
+      name = user.name.first.upcase
+      expect(page).to have_content(name)
+    end
   end
 end
