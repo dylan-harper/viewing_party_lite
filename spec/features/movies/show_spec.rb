@@ -6,10 +6,10 @@ RSpec.describe 'Movie Details page' do
     @user = create(:user)
   end
 
-  xit 'has a button to create a viewing party that takes the user to the new viewing party page', :vcr do
+  it 'has a button to create a viewing party that takes the user to the new viewing party page', :vcr do
     visit "/users/#{@user.id}/movies/#{@movie.db_id}"
     click_button "Create a Viewing Party"
-    expect(current_path).to eq("")
+    expect(current_path).to eq("/users/#{@user.id}/movies/#{@movie.db_id}/viewing-party/new")
   end
 
   it 'has a button to return to the discover page', :vcr do

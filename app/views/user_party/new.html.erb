@@ -1,1 +1,8 @@
+<h1><%= @movie.title %></h1>
 
+<%= form_with url: "/users/#{@user.id}", method: :post, local: true do |form| %>
+  <%= form.label "Duration: " %>
+  <%= form.number_field :duration, value: @movie.runtime, min: @movie.runtime %>
+
+  <%= form.submit "Create Party" %>
+<% end %>
