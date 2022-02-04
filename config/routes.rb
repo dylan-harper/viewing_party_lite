@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show'
   get '/users/:id/discover', to: 'users#discover'
   get '/users/:user_id/movies/:movie_id', to: 'movies#show'
-  get '/users/:user_id/movies/:movie_id/viewing-party/new', to: 'user_party#new' 
+  get '/users/:user_id/movies/:movie_id/viewing-party/new', to: 'user_party#new'
   get '/users/:id/movies', to: 'movies#results'
-  # resource :users, only: [:show]
+
+  post '/users/:user_id/movies/:movie_id/viewing-party/create', to: 'user_party#create'
+
+  # resources :user_party#, :only => [:create]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
