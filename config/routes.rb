@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   get '/welcome/index', to: 'welcome#index'
+  # get '/', to: 'welcome#index'
 
   get '/register', to: 'users#new'
-
+  get '/login', to: 'users#login_form'
+  post '/login', to: 'users#login'
   post '/register', to: 'users#create'
-  
+
   get '/users/:id', to: 'users#show'
   get '/users/:id/discover', to: 'users#discover'
   get '/users/:user_id/movies/:movie_id', to: 'movies#show'

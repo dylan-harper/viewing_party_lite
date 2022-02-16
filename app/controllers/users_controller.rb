@@ -1,4 +1,21 @@
 class UsersController < ApplicationController
+
+  def login_form
+    @user = User.new
+  end
+
+  def login
+    user = User.find_by(name: user_params[:name])
+    if user.authenticate(user_params[:password])
+      session[:user_id] = user.id
+      flash[:success] = "Welcome, #{user.name}!"
+      redirect_to root_path
+    else
+      flash[:error] = 'Wrong credentials'
+      redirect_to action: :login_form
+    end
+  end
+
   def new
     @user = User.new
   end

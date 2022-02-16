@@ -30,4 +30,10 @@ RSpec.describe "welcome index", type: :view do
 
     expect(current_path).to eq("/register")
   end
+
+  it 'has a login button' do
+    click_button 'Login to your account'
+
+    expect(current_path).to eq(login_path)
+  end
 end
