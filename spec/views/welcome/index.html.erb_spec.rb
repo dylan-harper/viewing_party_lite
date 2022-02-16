@@ -9,7 +9,7 @@ RSpec.describe "welcome index", type: :view do
     visit root_path
   end
 
-  it 'links to the welcome page' do
+  xit 'links to the welcome page' do
     expect(page).to have_content('Viewing Party Lite')
     expect(page).to have_button('Create User')
     expect(page).to have_link("#{@user_1.name}")
@@ -22,7 +22,7 @@ RSpec.describe "welcome index", type: :view do
     expect(current_path).to eq(root_path)
   end
 
-  it 'has a button to create a new user' do
+  xit 'has a button to create a new user' do
     click_button "Create User"
 
     expect(current_path).to eq("/register")
