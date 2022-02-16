@@ -18,9 +18,6 @@ class UsersController < ApplicationController
     elsif User.invalid_characters?(user_params[:password]) #&& !user_params[:password_confirmation].invalid?
       flash[:error] = 'Invalid password, must only include numbers or letters'
       return redirect_to '/register'
-    # elsif !user_params[:password] || !user_params[:password_confirmation]
-    #   flash[:error] = 'Missing a password field or confirmation'
-    #   return redirect_to '/register'
     elsif user_params[:password] != user_params[:password_confirmation]
       flash[:error] = 'Password and confirmation do not match'
       return redirect_to '/register'
