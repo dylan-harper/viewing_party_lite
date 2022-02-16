@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    @user = User.new
   end
 
   def discover
@@ -11,14 +12,28 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create!(name: user_params[:name], email: user_params[:email], password: user_params[:password], password_confirmation: user_params[:password_confirmation])
-    redirect_to "/users/#{@user.id}"
+    if !user_params[:password] || !user_params[:password_confirmation]
+      flash[:error] = 'Missing a password field or confirmation'
+      return redirect_to '/register'
+    elsif user_params[:password] != user_params[:password_confirmation]
+      flash[:error] = 'Password and confirmation do not match'
+      return redirect_to '/register'
+    end
+
+    user = user_params
+    user[:email] = user[:email].downcase
+    @user = User.create(user)
+
+    if @user != nil
+      flash[:success] = "Welcome, #{@user.name}!"
+      redirect_to "/users/#{@user.id}"
+    end
   end
 
   private
 
   def user_params
-    params.permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
 end
