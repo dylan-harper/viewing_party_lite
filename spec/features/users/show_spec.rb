@@ -49,18 +49,6 @@ RSpec.describe 'the user show page' do
     expect(current_path).to eq("/users/#{@user_1.id}/discover")
   end
 
-  # it 'lists viewing parties user is invited to' do
-  #   within('#invited-parties') do
-  #     within("#party-#{@party_1.id}") do
-  #
-  #     end
-  #     expect(page).to have_content(@party_1.id)
-  #     expect(page).to have_content(@party_2.id)
-  #     expect(page).to have_content(@party_3.id)
-  #     expect(page).to_not have_content(@party_4.id)
-  #   end
-  # end
-
   it 'has the event details for each party', :vcr do
     within('#invited-parties') do
       within("#party-#{@party_2.id}") do

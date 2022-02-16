@@ -5,14 +5,14 @@ FactoryBot.define do
     email { Faker::Lorem.characters(number:10) }
   end
 
-  factory :movie do
-    db_id { Faker::Number.number(digits: 3) }
-    title { Faker::Movie.title }
-    poster_path { Faker::Lorem.characters(number:15) }
-    genre_ids { Faker::Lorem.characters(number:5) }
-    overview { Faker::Lorem.paragraph(sentence_count: 3) }
-    vote_average { Faker::Number.number(digits: 1) }
-  end
+  # factory :movie do
+  #   db_id { Faker::Number.number(digits: 3) }
+  #   title { Faker::Movie.title }
+  #   poster_path { Faker::Lorem.characters(number:15) }
+  #   genre_ids { Faker::Lorem.characters(number:5) }
+  #   overview { Faker::Lorem.paragraph(sentence_count: 3) }
+  #   vote_average { Faker::Number.number(digits: 1) }
+  # end
 
   factory :party do
     duration { Faker::Number.number(digits: 3) }

@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.1.0
+      - Faraday v2.2.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 04 Feb 2022 17:20:38 GMT
+      - Fri, 04 Feb 2022 19:13:56 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -38,27 +38,25 @@ http_interactions:
       Cache-Control:
       - public, max-age=28800
       X-Memc:
-      - MISS, STORE
+      - HIT
       X-Memc-Key:
       - 1d87ab7ea93a11d60311e83fcedecc881f1fb2a8
       X-Memc-Age:
-      - '0'
+      - '6798'
       X-Memc-Expires:
-      - '17379'
-      Last-Modified:
-      - '2021-08-20 22:59:32 +0000'
+      - '10581'
+      Etag:
+      - W/"05be383c5f0fd61e6f2a4922244925ff"
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 9c7e5857d78c5dc89042979317de5842.cloudfront.net (CloudFront)
+      - 1.1 bdb686e41bd85ffb1c6e5b48947e5566.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - SFO53-C1
       X-Amz-Cf-Id:
-      - tlEAxJtz2SbdlYINAEM9GwLu_1TKxUsj_Q8-2gGM5tWFaQe2EucMMQ==
-      Age:
-      - '175'
+      - DqZFC3K9y6Li-Q4MO8aQrJPuRpvuGxrjiQjIhIe0WzAKc7H7_dskoQ==
     body:
       encoding: ASCII-8BIT
       string: '{"id":863823,"cast":[{"adult":false,"gender":0,"id":3206106,"known_for_department":"Acting","name":"Moeka
@@ -69,5 +67,5 @@ http_interactions:
         Ohka","original_name":"Ken Ohka","popularity":0.6,"profile_path":null,"cast_id":5,"character":"","credit_id":"6120344a594c94007c1e72c3","order":5},{"adult":false,"gender":0,"id":3206111,"known_for_department":"Acting","name":"Shota","original_name":"Shota","popularity":0.6,"profile_path":null,"cast_id":6,"character":"","credit_id":"6120345285c0a2002a54762d","order":6},{"adult":false,"gender":0,"id":3206112,"known_for_department":"Acting","name":"Shuichiro
         Katsumura","original_name":"Shuichiro Katsumura","popularity":0.6,"profile_path":null,"cast_id":7,"character":"","credit_id":"61203465f03174005d58c997","order":7},{"adult":false,"gender":0,"id":3206113,"known_for_department":"Acting","name":"Yumehito
         Imanari","original_name":"Yumehito Imanari","popularity":0.6,"profile_path":null,"cast_id":8,"character":"","credit_id":"61203470a22d3e007550873c","order":8}],"crew":[]}'
-  recorded_at: Fri, 04 Feb 2022 17:23:33 GMT
+  recorded_at: Fri, 04 Feb 2022 19:13:56 GMT
 recorded_with: VCR 6.0.0
