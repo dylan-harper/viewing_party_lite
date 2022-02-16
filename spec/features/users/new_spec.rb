@@ -6,8 +6,8 @@ RSpec.describe 'Register User Page' do
 
     fill_in 'Name', with: 'Tim Cook'
     fill_in 'Email', with: 'timcook@apple.com'
-    fill_in 'Password', with: 'password'
-    fill_in 'Password confirmation', with: 'password'
+    fill_in 'Password', with: 'password1'
+    fill_in 'Password confirmation', with: 'password1'
     click_button 'Register'
 
     expect(current_path).to eq("/users/#{User.last.id}")
@@ -16,10 +16,22 @@ RSpec.describe 'Register User Page' do
 
   end
 
-  it 'new user sad path' do
+  it 'new user sad path confirmation' do
     visit '/register'
 
     fill_in 'Name', with: 'Tim Cook'
+    fill_in 'Email', with: 'timcook@apple.com'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password confirmation', with: 'wrong password'
+    click_button 'Register'
+
+    expect(current_path).to eq('/register')
+  end
+
+  it 'new user sad path missing name' do
+    visit '/register'
+
+    # fill_in 'Name', with: 'Tim Cook'
     fill_in 'Email', with: 'timcook@apple.com'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'wrong password'

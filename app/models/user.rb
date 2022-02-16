@@ -20,4 +20,22 @@ class User < ApplicationRecord
     parties
       .where('user_parties.status = ?', 'Host')
   end
+
+  def self.invalid_length?(password)
+    password.length < 8
+  end
+
+  def self.invalid_characters?(password)
+    special = "?<>',?[]}{=-)(*&^%$#`~{}/"
+    specials = special.split('')
+    characters = password.split('')
+    characters.each do |c|
+      specials.each do |s|
+        if c == s
+          return true
+        end
+      end
+    end
+    false
+  end
 end
