@@ -1,6 +1,6 @@
 # Viewing Party
 
-Attached is the base repo for the [Viewing Party Lite project](https://backend.turing.io/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
+Attached is the description for the [Viewing Party Lite project](https://backend.turing.io/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
 
 ### About this Project
 
